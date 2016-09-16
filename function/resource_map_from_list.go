@@ -7,9 +7,9 @@ import (
 func resourceMapFromList() *schema.Resource {
 	return &schema.Resource{
 		Create: resourceMFLCreate,
-		Read:   resourceMFLCreate,
-		Update: resourceMFLCreate,
-		Delete: resourceMFLCreate,
+		Read:   resourceMFLRead,
+		Update: resourceMFLUpdate,
+		Delete: resourceMFLDelete,
 
 		Schema: map[string]*schema.Schema{
 			"list": &schema.Schema{
@@ -41,5 +41,18 @@ func resourceMFLCreate(d *schema.ResourceData, m interface{}) error {
 
 	d.Set("return", dict)
 	d.SetId(uid)
+	return nil
+}
+
+func resourceMFLRead(d *schema.ResourceData, m interface{}) error {
+	return nil
+}
+
+func resourceMFLUpdate(d *schema.ResourceData, m interface{}) error {
+	return nil
+}
+
+func resourceMFLDelete(d *schema.ResourceData, m interface{}) error {
+	d.SetId("")
 	return nil
 }

@@ -8,9 +8,9 @@ import (
 func resourceZip() *schema.Resource {
 	return &schema.Resource{
 		Create: resourceZipCreate,
-		Read:   resourceZipCreate,
-		Update: resourceZipRead,
-		Delete: resourceZipRead,
+		Read:   resourceZipRead,
+		Update: resourceZipUpdate,
+		Delete: resourceZipDelete,
 
 		Schema: map[string]*schema.Schema{
 			"list1": &schema.Schema{
@@ -58,6 +58,13 @@ func resourceZipCreate(d *schema.ResourceData, m interface{}) error {
 }
 
 func resourceZipRead(d *schema.ResourceData, m interface{}) error {
-	d.SetId("LOL")
+	return nil
+}
+
+func resourceZipUpdate(d *schema.ResourceData, m interface{}) error {
+	return nil
+}
+
+func resourceZipDelete(d *schema.ResourceData, m interface{}) error {
 	return nil
 }

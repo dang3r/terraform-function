@@ -52,7 +52,7 @@ func resourceZipCreate(d *schema.ResourceData, m interface{}) error {
 		uid += key + ":" + val
 	}
 
-	d.Set("return", &dict)
+	d.Set("return", dict)
 	d.SetId(uid)
 	return nil
 }

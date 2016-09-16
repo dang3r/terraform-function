@@ -8,6 +8,15 @@ variable "list2" {
   default = ["Maple-Leafs", "Sharks", "Bruins"]
 }
 
+variable "map1" {
+  type = "map"
+  default = {
+    "Justin" = "Trudeau"
+    "George" = "Bush"
+    "Vladimir" = "Putin"
+  }
+}
+
 variable "list3" {
   type = "list"
 

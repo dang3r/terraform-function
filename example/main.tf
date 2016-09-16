@@ -11,6 +11,6 @@ resource "template_file" "foo" {
   template = "${lol}"
 
   vars {
-    lol = "${join("_",keys("${function_zip.f1.return}"))}"
+    lol = "${jsonencode(merge(function_zip.f1.return,function_map_from_list.f2.return, var.map1))}"
   }
 }
